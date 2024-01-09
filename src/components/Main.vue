@@ -46,16 +46,6 @@ export default {
 </template>
 
 <style lang="scss" scoped>
-.cards {
-  background-color: rgba(28, 28, 28, 255);
-  height: 200px;
-
-  .textWhite {
-    color: white;
-
-  }
-}
-
 .center {
   display: flex;
   justify-content: space-around;

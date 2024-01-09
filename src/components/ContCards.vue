@@ -67,7 +67,7 @@ export default {
                 {
                     "thumb": "https://static.wikia.nocookie.net/marvel_dc/images/f/f8/Batman_White_Knight_Presents_Harley_Quinn_Vol_1_1.jpg",
                     "price": "$4.99",
-                    "series": "Batman: White Knight Presents: Harley Quinn",
+                    "series": "Batman:  White Knight Presents: Harley Quinn",
                     "type": "comic book",
                 },
                 {
@@ -84,20 +84,88 @@ export default {
 </script>
 <template lang="">
     <div>
-        <div class="cards">
-            <div class="textWhite">-- > CONTENT GO HERE</div>
+        <div class="topContent"><h3 class="blueBut posizione" >CURRENT SERIES</h3></div>
+        <div class="content">
+            <div class="cards " v-for="comic, index in comics" :key="index">
+                <img :src="comic.thumb">
+                <p class="textWhite" >{{comic.series}}</p>
+                <div class="overlay">
+                    <p class="textWhite">{{ comic.type}}</p>
+                    <p class="textWhite">{{ comic.price}}</p>
+                </div>
+            </div>
+            
+            <p class="blueBut center " >Load More</p>
         </div>
     </div>
 </template>
 
 <style lang="scss" scoped>
-.cards {
+.topContent {
+    height: 400px;
+    background-image: url('../assets/img/jumbotron.jpg');
+
+
+
+    .posizione {
+        position: absolute;
+        bottom: 360px;
+        left: 60px;
+    }
+
+}
+
+.blueBut {
+    background-color: rgba(2, 130, 249, 255);
+    border: solid rgba(2, 130, 249, 255);
+    color: white;
+    width: fit-content;
+
+
+}
+
+.content {
     background-color: rgba(28, 28, 28, 255);
-    height: 200px;
+    padding: 120px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    img {
+        width: 50%;
+    }
+
+    .cards {
+        width: calc(100% / 6);
+        margin: 15px 0;
+        position: relative;
+    }
+
 
     .textWhite {
         color: white;
 
     }
+
+    .overlay {
+        position: absolute;
+        bottom: 89px;
+        left: 0;
+        background-color: rgba(0, 0, 0, 0.582);
+        transition: 1s;
+
+        align-items: center;
+        width: 50%;
+        height: 28%;
+        opacity: 0;
+
+        &:hover {
+            opacity: 1;
+        }
+
+
+    }
+
+
 }
 </style>
