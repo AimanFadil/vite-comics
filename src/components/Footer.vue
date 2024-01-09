@@ -169,7 +169,7 @@ export default {
   </div>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .footer1 {
   background-image: url('../assets/img/footer-bg.jpg');
 

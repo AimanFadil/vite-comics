@@ -1,5 +1,10 @@
 <script>
+import ContCards from '../components/ContCards.vue'
 export default {
+  components: {
+    ContCards
+
+  },
   name: 'Main',
   data() {
     return {
@@ -31,9 +36,7 @@ export default {
 </script>
 <template lang="">
   <main>
-    <div class="cards">
-      <div class="textWhite">-- > CONTENT GO HERE</div>
-    </div>
+    <ContCards />
     <div class="center">
       <ul class="info">
         <li v-for="infos, index in informazioni" :key="index" ><img :src="infos.img" > <span>{{ infos.text}}</span></li>
