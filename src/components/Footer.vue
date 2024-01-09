@@ -174,8 +174,9 @@ export default {
   background-image: url('../assets/img/footer-bg.jpg');
 
   .img-bg {
-    width: 30%;
+    width: 31%;
   }
+
 
 
   .content {

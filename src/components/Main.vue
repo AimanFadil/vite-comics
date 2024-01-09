@@ -60,7 +60,7 @@ export default {
   height: 200px;
 
   img {
-    width: 35%;
+    width: 25%;
   }
 
   .info {

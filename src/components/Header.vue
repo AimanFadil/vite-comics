@@ -6,7 +6,7 @@ export default {
             lista: [
                 {
                     sezione: 'CHARACTERS',
-                    attivo: false
+                    attivo: true
                 },
                 {
                     sezione: 'COMICS',
@@ -14,35 +14,35 @@ export default {
                 },
                 {
                     sezione: 'MOVIES',
-                    attivo: false
+                    attivo: true
                 },
                 {
                     sezione: 'TV',
-                    attivo: false
+                    attivo: true
                 },
                 {
                     sezione: 'GAMES',
-                    attivo: false
+                    attivo: true
                 },
                 {
                     sezione: 'COLLECTIBLES',
-                    attivo: false
+                    attivo: true
                 },
                 {
                     sezione: 'VIDEOS',
-                    attivo: false
+                    attivo: true
                 },
                 {
                     sezione: 'FANS',
-                    attivo: false
+                    attivo: true
                 },
                 {
                     sezione: 'NEWS',
-                    attivo: false
+                    attivo: true
                 },
                 {
                     sezione: 'SHOP',
-                    attivo: false
+                    attivo: true
                 },
             ]
         }
@@ -59,7 +59,7 @@ export default {
                 </div>
                 <div class="col-9">
                     <ul class="direction">
-                        <li v-for="list, index in lista" :key="index" >{{ list.sezione }}</li>
+                        <li v-for="list, index in lista" :key="index" :class="list.attivo ? 'active' : ''">{{ list.sezione }}</li>
                     </ul>
                 </div>
             </div>
@@ -70,17 +70,30 @@ export default {
 
 <style lang="scss" scoped>
 header {
-    height: 100px;
+    height: 65px;
     margin: 30px;
+
+    img {
+        width: 25%;
+    }
 
     .direction {
         display: flex;
         flex-direction: row;
         list-style: none;
+
     }
 
     li {
-        padding: 15px;
+        padding: 10px 15px 15px 15px;
+        line-height: 65px;
+
+        &.active:hover {
+            color: rgba(2, 130, 249, 255);
+
+            border-bottom: 5px solid rgba(2, 130, 249, 255);
+
+        }
     }
 }
 </style>
