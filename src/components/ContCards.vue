@@ -72,7 +72,7 @@ export default {
                 {
                     "thumb": "https://static.wikia.nocookie.net/marvel_dc/images/f/f8/Batman_White_Knight_Presents_Harley_Quinn_Vol_1_1.jpg",
                     "price": "$4.99",
-                    "series": "Batman:  White Knight Presents: Harley Quinn",
+                    "series": "Batman:White Knight Harley Quinn",
                     "type": "comic book",
                 },
                 {
@@ -92,9 +92,12 @@ export default {
         <div class="topContent">
             <h3 class="blueBut posizione" >CURRENT SERIES</h3>
         </div>
-        <div>
+        <div class="propsCont">
             <Cards v-for="comic, index in comics" :key="index" :comic="comic"/>
-            <p class="blueBut center ">Load More</p>
+            <div class="center"> 
+                <p class="blueBut  ">Load More</p>
+            </div>
+            
         </div>
         
     </div>
@@ -115,6 +118,13 @@ export default {
 
 }
 
+.propsCont {
+    display: flex;
+    background-color: rgba(28, 28, 28, 255);
+    flex-wrap: wrap;
+    padding: 70px;
+}
+
 .blueBut {
     background-color: rgba(2, 130, 249, 255);
     border: solid rgba(2, 130, 249, 255);
@@ -122,5 +132,11 @@ export default {
     width: fit-content;
     height: fit-content;
 
+}
+
+.center {
+    position: absolute;
+    left: 50%;
+    bottom: -550px
 }
 </style>

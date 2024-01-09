@@ -24,7 +24,7 @@ export default {
     background-color: rgba(28, 28, 28, 255);
     padding: 15px 50px;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     flex-wrap: wrap;
 
     .cards {
@@ -39,18 +39,18 @@ export default {
         }
 
         img {
-            width: 50%;
+            width: 160px;
         }
 
         .overlay {
             position: absolute;
-            bottom: 89px;
+            bottom: 178px;
             left: 0;
             background-color: rgba(0, 0, 0, 0.582);
             transition: 1s;
 
             align-items: center;
-            width: 50%;
+            width: 160px;
             height: 28%;
             opacity: 0;
 
