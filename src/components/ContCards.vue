@@ -1,5 +1,10 @@
 <script>
+import Cards from '../components/Cards.vue'
 export default {
+    components: {
+        Cards
+
+    },
     name: 'ContCards',
     data() {
         return {
@@ -84,19 +89,14 @@ export default {
 </script>
 <template lang="">
     <div>
-        <div class="topContent"><h3 class="blueBut posizione" >CURRENT SERIES</h3></div>
-        <div class="content">
-            <div class="cards " v-for="comic, index in comics" :key="index">
-                <img :src="comic.thumb">
-                <p class="textWhite" >{{comic.series}}</p>
-                <div class="overlay">
-                    <p class="textWhite">{{ comic.type}}</p>
-                    <p class="textWhite">{{ comic.price}}</p>
-                </div>
-            </div>
-            
-            <p class="blueBut center " >Load More</p>
+        <div class="topContent">
+            <h3 class="blueBut posizione" >CURRENT SERIES</h3>
         </div>
+        <div>
+            <Cards v-for="comic, index in comics" :key="index" :comic="comic"/>
+            <p class="blueBut center ">Load More</p>
+        </div>
+        
     </div>
 </template>
 
@@ -120,52 +120,7 @@ export default {
     border: solid rgba(2, 130, 249, 255);
     color: white;
     width: fit-content;
-
-
-}
-
-.content {
-    background-color: rgba(28, 28, 28, 255);
-    padding: 120px;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-
-    img {
-        width: 50%;
-    }
-
-    .cards {
-        width: calc(100% / 6);
-        margin: 15px 0;
-        position: relative;
-    }
-
-
-    .textWhite {
-        color: white;
-
-    }
-
-    .overlay {
-        position: absolute;
-        bottom: 89px;
-        left: 0;
-        background-color: rgba(0, 0, 0, 0.582);
-        transition: 1s;
-
-        align-items: center;
-        width: 50%;
-        height: 28%;
-        opacity: 0;
-
-        &:hover {
-            opacity: 1;
-        }
-
-
-    }
-
+    height: fit-content;
 
 }
 </style>
